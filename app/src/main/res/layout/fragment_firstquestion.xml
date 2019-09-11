@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="25dp"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:id="@+id/txtPageNumber"
+        android:text="1 of 2"
+        android:layout_marginBottom="5dp"
+        android:typeface="serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@+id/txtPageNumber"
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtTitle"
+        android:layout_marginLeft="25dp"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:text="Please check if you have any of these social media accounts:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/txtTitle"
+            android:id="@+id/recycleSocialMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+    <CheckBox
+        android:textSize="24sp"
+        android:fontFamily="serif"
+        android:text="Others:"
+        android:layout_marginLeft="40dp"
+        android:buttonTint="@color/checkbox_filter_tint"
+        android:id="@+id/chckOthers"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/recycleSocialMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtOthers"
+        android:layout_marginLeft="5dp"
+        android:textSize="24sp"
+        android:fontFamily="serif"
+        android:textColor="@color/black"
+        android:layout_toRightOf="@+id/chckOthers"
+        android:text="_____________"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/recycleSocialMedia"
+        android:layout_toEndOf="@+id/chckOthers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtQuestion2"
+        android:layout_marginTop="18dp"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@+id/chckOthers"
+        android:text="Which of these PANDORA products do you own:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleProducts"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtQuestion2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnNext"
+        style="@style/ButtonBorder.AccentBlack1"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:text="NEXT"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
