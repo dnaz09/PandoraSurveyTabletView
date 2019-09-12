@@ -113,7 +113,7 @@
                             android:digits="@string/charset"
                             android:inputType="textCapWords|text"
                             android:imeOptions="actionDone"
-                            android:backgroundTint="@color/black"
+                            android:backgroundTint="@color/richpink"
                             android:textColorHint="@color/whiteGray"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" />
@@ -140,7 +140,7 @@
                             android:digits="@string/charset"
                             android:inputType="textCapWords|text"
                             android:textColorHint="@color/whiteGray"
-                            android:backgroundTint="@color/black"
+                            android:backgroundTint="@color/richpink"
                             android:hint="Last"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" />
@@ -174,7 +174,7 @@
                         android:typeface="serif"
                         android:textSize="25sp"
                         android:textColorHint="@color/whiteGray"
-                        android:backgroundTint="@color/black"
+                        android:backgroundTint="@color/richpink"
                         android:hint="Email"
                         android:digits="0123456789@.,_qwertzuiopasdfghjklyxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
                         android:singleLine="true"
@@ -228,7 +228,7 @@
                         android:typeface="serif"
                         android:textSize="25sp"
                         android:textColorHint="@color/whiteGray"
-                        android:backgroundTint="@color/black"
+                        android:backgroundTint="@color/richpink"
                         android:hint="Mobile Number"
                         android:singleLine="true"
                         android:maxLength="12"
@@ -270,9 +270,9 @@
                         android:imeOptions="actionDone"
                         android:singleLine="true"
                         android:textSize="25sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/richpink"
                         android:textColorHint="@color/whiteGray"
-                        android:backgroundTint="@color/black"
+                        android:backgroundTint="@color/richpink"
                         android:hint="Click here to pick a Birth Date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
@@ -280,7 +280,7 @@
 
                 <Button
                     android:id="@+id/btnSubmit"
-                    style="@style/ButtonBorder.AccentBlack"
+                    style="@style/ButtonBorder.RichPink"
                     android:textStyle="bold"
                     android:typeface="serif"
                     android:text="SUBMIT INFORMATION"
@@ -294,17 +294,18 @@
 
                 <Button
                     android:id="@+id/btnConfirm"
-                    style="@style/ButtonBorder.AccentBlack"
-                    android:textStyle="bold"
-                    android:typeface="serif"
-                    android:text="CONFIRM"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginRight="35dp"
+                    style="@style/ButtonBorder.RichPink"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/btnSubmit"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="CONFIRM"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
 
             </RelativeLayout>
         </RelativeLayout>
