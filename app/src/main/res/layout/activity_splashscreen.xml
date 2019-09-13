@@ -7,9 +7,17 @@
 
     <ImageView
         android:id="@+id/imgPandora"
-        android:layout_centerInParent="true"
-        android:background="@drawable/pandorawhitelogo"
-        android:layout_width="490dp"
-        android:layout_height="500dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:background="@drawable/pandora_logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CUSTOMER RELATIONSHIP MANAGEMENT"
+        android:gravity="center"
+        android:layout_marginTop="400dp"/>
 
 </RelativeLayout>
