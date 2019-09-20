@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/imgPandora"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:layout_width="500dp"
         android:layout_height="100dp"
         android:background="@drawable/pandora_logo" />
@@ -18,12 +18,14 @@
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/textview_border"
-        android:padding="15dp"
+        android:padding="21dp"
         android:visibility="visible"
         android:layout_marginTop="400dp"
         android:gravity="center"
         android:text="CUSTOMER RELATIONSHIP MANAGEMENT"
         android:textSize="15dp"
+        android:fontFamily="@font/pantext_tt_regular"
+        android:textColor="@android:color/black"
         />
 
 </RelativeLayout>

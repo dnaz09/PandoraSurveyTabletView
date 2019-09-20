@@ -64,8 +64,8 @@ public class FirstSurvey extends AppCompatActivity {
     private RequestQueue requestQueue;
     private StringRequest request;
 
-    TextInputLayout inputFirst, inputLast, inputEmail, inputMobile, inputDate;
-    TextInputEditText edtFirstName, edtLastName, edtEmail, edtMobile, edtBirthDate;
+    TextInputLayout inputFirst, inputMI, inputLast, inputEmail, inputMobile, inputDate;
+    TextInputEditText edtFirstName, edtMiddleInitial, edtLastName, edtEmail, edtMobile, edtBirthDate;
     ImageView imgName, imgEmail, imgMobile, imgDate, imgPandora;
     Calendar myCalendar;
     Button btnSubmit, btnConfirm;
@@ -74,6 +74,7 @@ public class FirstSurvey extends AppCompatActivity {
     Dialog dialogDatePicker;
 
     String fName = "";
+    String MI = "";
     String lName = "";
     String mobNo = "";
     String bday = "";
@@ -100,12 +101,14 @@ public class FirstSurvey extends AppCompatActivity {
         imgPandora = (ImageView) findViewById(R.id.imgLucerne1);
 
         inputFirst = (TextInputLayout) findViewById(R.id.inputFirst);
+        inputMI = (TextInputLayout) findViewById(R.id.inputMI);
         inputLast = (TextInputLayout) findViewById(R.id.inputLast);
         inputEmail = (TextInputLayout) findViewById(R.id.inputEmail);
         inputMobile = (TextInputLayout) findViewById(R.id.inputMobile);
         inputDate = (TextInputLayout) findViewById(R.id.inputDate);
 
         edtFirstName = (TextInputEditText) findViewById(R.id.edtFirstName);
+        edtMiddleInitial = (TextInputEditText) findViewById(R.id.edtMiddleInitial);
         edtLastName = (TextInputEditText) findViewById(R.id.edtLastName);
         edtEmail = (TextInputEditText) findViewById(R.id.edtEmail);
         edtMobile = (TextInputEditText) findViewById(R.id.edtMobile);
@@ -123,6 +126,7 @@ public class FirstSurvey extends AppCompatActivity {
         countryCodePicker = (CountryCodePicker) findViewById(R.id.countryCodePicker);
 
         inputFirst.setVisibility(View.INVISIBLE);
+        inputMI.setVisibility(View.INVISIBLE);
         inputLast.setVisibility(View.INVISIBLE);
         inputEmail.setVisibility(View.INVISIBLE);
         inputMobile.setVisibility(View.INVISIBLE);
@@ -179,6 +183,7 @@ public class FirstSurvey extends AppCompatActivity {
 
                     Survey.countryCode = countryCodePicker.getFullNumberWithPlus();
                     fName = edtFirstName.getText().toString();
+                    MI = edtMiddleInitial.getText().toString();
                     lName = edtLastName.getText().toString();
                     email = edtEmail.getText().toString();
                     mobNo = edtMobile.getText().toString();
@@ -187,7 +192,7 @@ public class FirstSurvey extends AppCompatActivity {
                     Pattern pattern1 = Pattern.compile("^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\\.([a-zA-Z])+([a-zA-Z])+");
                     Matcher matcher1 = pattern1.matcher(email);
 
-                    if (fName.equals("") && lName.equals("") && email.equals("")) {
+                    if (fName.equals("") && MI.equals("") && lName.equals("") && email.equals("")) {
                         Toast.makeText(FirstSurvey.this, "Field's are Empty!", Toast.LENGTH_SHORT).show();
                     }
                     if (mobNo.equals("")) {
@@ -195,6 +200,9 @@ public class FirstSurvey extends AppCompatActivity {
                     }
                     else if (fName.equals("")) {
                         edtFirstName.setError("Required");
+                    }
+                    else if (MI.equals("")) {
+                        edtMiddleInitial.setError("Required");
                     }
                     else if (lName.equals("")) {
                         edtLastName.setError("Required");
@@ -256,7 +264,7 @@ public class FirstSurvey extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Survey.title = "Ms.";
+                    Survey.title = "MS.";
                     chckMrs.setChecked(false);
                     chckMr.setChecked(false);
                 }
@@ -266,7 +274,7 @@ public class FirstSurvey extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Survey.title = "Mrs.";
+                    Survey.title = "MRS.";
                     chckMs.setChecked(false);
                     chckMr.setChecked(false);
                 }
@@ -276,7 +284,7 @@ public class FirstSurvey extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-                    Survey.title = "Mr.";
+                    Survey.title = "MR.";
                     chckMrs.setChecked(false);
                     chckMs.setChecked(false);
                 }
@@ -311,6 +319,8 @@ public class FirstSurvey extends AppCompatActivity {
                 imgName.startAnimation(AnimationUtils.loadAnimation(FirstSurvey.this, R.anim.lefttoright));
                 inputFirst.startAnimation(AnimationUtils.loadAnimation(FirstSurvey.this, R.anim.fade_in));
                 inputFirst.setVisibility(View.VISIBLE);
+                inputMI.startAnimation(AnimationUtils.loadAnimation(FirstSurvey.this, R.anim.fade_in));
+                inputMI.setVisibility(View.VISIBLE);
                 inputLast.startAnimation(AnimationUtils.loadAnimation(FirstSurvey.this, R.anim.fade_in));
                 inputLast.setVisibility(View.VISIBLE);
                 chckMs.startAnimation(AnimationUtils.loadAnimation(FirstSurvey.this, R.anim.fade_in));
@@ -507,6 +517,7 @@ public class FirstSurvey extends AppCompatActivity {
                 hashMap.put("branch_code", Survey.branchCode);
                 hashMap.put("title", Survey.title);
                 hashMap.put("firstname",edtFirstName.getText().toString());
+                hashMap.put("middle_initial",edtMiddleInitial.getText().toString());
                 hashMap.put("lastname",edtLastName.getText().toString());
                 hashMap.put("email",edtEmail.getText().toString());
                 hashMap.put("mobile", Survey.countryCode + " " + edtMobile.getText().toString());
@@ -533,6 +544,7 @@ public class FirstSurvey extends AppCompatActivity {
                         JSONObject details = o.getJSONObject("details");
                         String title = details.getString("title");
                         String firstname = details.getString("firstname");
+                        String middle_initial = details.getString("middle_initial");
                         String lastname = details.getString("lastname");
                         String email = details.getString("email");
                         String birthday = details.getString("birthday");
@@ -555,12 +567,14 @@ public class FirstSurvey extends AppCompatActivity {
                                 chckMr.setChecked(false);
                             }
                             edtFirstName.setText(firstname);
+                            edtMiddleInitial.setText(middle_initial);
                             edtLastName.setText(lastname);
                             edtEmail.setText(email);
                             edtBirthDate.setText(birthday);
 
                             edtMobile.setEnabled(false);
                             edtFirstName.setEnabled(false);
+                            edtMiddleInitial.setEnabled(false);
                             edtLastName.setEnabled(false);
                             edtEmail.setEnabled(false);
                             edtBirthDate.setEnabled(false);
@@ -679,6 +693,7 @@ public class FirstSurvey extends AppCompatActivity {
     //Clear All
     private void ClearEditText() {
         edtFirstName.setText("");
+        edtMiddleInitial.setText("");
         edtLastName.setText("");
         edtMobile.setText("");
         edtEmail.setText("");

@@ -69,4 +69,8 @@
         <item name="android:datePickerMode">spinner</item>
     </style>
 
+    <style name="Hyperlink">
+        <item name="android:textColor">#FFCAD4</item>
+        <item name="android:background">@drawable/text_underline</item>
+    </style>
 </resources>
