@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/text_underline"
+        android:fontFamily="@font/pantext_tt_bold"
+        android:text="PLEASE CHECK THE BOX ACCORDINGLY"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/txtQuestion1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:fontFamily="@font/pantext_tt_bold"
+        android:text="YOUR SOCIAL MEDIA ACCOUNTS:"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleSocialMedia"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/txtQuestion1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-10dp"
+        android:layout_marginEnd="7dp">
+    </android.support.v7.widget.RecyclerView>
+
+
+    <TextView
+        android:id="@+id/txtQuestion2"
+        android:layout_below="@+id/recycleSocialMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="WHCICH OF THESE PANDORA PRODUCTS DO YOU OWN?"
+        android:fontFamily="@font/pantext_tt_bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleProducts"
+        android:layout_below="@+id/txtQuestion2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"/>
+
+    <TextView
+        android:id="@+id/txtQuestion3"
+        android:layout_below="@+id/recycleProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="DO YOU BUY PANDORA FOR GIFTING TO LOVED ONES OR FRIENDS?"
+        android:fontFamily="@font/pantext_tt_bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+
+    <CheckBox
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="380dp"
+        android:layout_below="@+id/txtQuestion3"
+        android:id="@+id/chckYes"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:typeface="serif"
+        android:text="Yes"
+        android:buttonTint="@color/checkbox_filter_tint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/chckNo"
+        android:textSize="24sp"
+        android:typeface="serif"
+        android:buttonTint="@color/checkbox_filter_tint"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@+id/chckYes"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtQuestion3"
+        android:text="No"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/txtQuestion4"
+        android:layout_below="@+id/chckYes"
+        android:text="HOW DID YOU LEARN ABOUT THE NEW COLLECTIONS OF PANDORA?"
+        android:fontFamily="@font/pantext_tt_bold"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleViewAds"
+        android:layout_below="@id/txtQuestion4"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"/>
+
+    <Button
+        android:id="@+id/btnFinish"
+        style="@style/ButtonBorder.AccentBlack1"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:typeface="serif"
+        android:text="FINISH"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>
